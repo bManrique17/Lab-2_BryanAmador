@@ -303,27 +303,31 @@ public class Lab2_BryanAmador {
                 switch (opcion){
                     case "1":
                         System.out.println("Ingrese el nuevo nombre: ");
-                        listaMaestros.get(pos).setNombre(sc2.next());
+                        listaAlumnos.get(pos).setNombre(sc2.next());
                         break;
                     case "2":
-                        System.out.println("Ingrese el nuevo titulo: ");
-                        listaMaestros.get(pos).setTitulo(sc2.next());
+                        System.out.println("Ingrese el nuevo numero de cuenta: ");
+                        listaAlumnos.get(pos).setNumeroCuenta(sc2.next());
                         break;
                     case "3":
-                        System.out.println("Ingrese la nueva Maestria: ");
-                        listaMaestros.get(pos).setMaestria(sc2.next());
+                        System.out.println("Ingrese la nueva carrera: ");
+                        listaAlumnos.get(pos).setCarrera(sc2.next());
                         break;
                     case "4":
                         System.out.println("Ingrese el nuevo usuario: ");
-                        listaMaestros.get(pos).setUsuario(sc2.next());
+                        listaAlumnos.get(pos).setUsuario(sc2.next());
                         break;
                     case "5":
                         System.out.println("Ingrese la nueva contraseña: ");
-                        listaMaestros.get(pos).setContraseña(sc2.next());
+                        listaAlumnos.get(pos).setContraseña(sc2.next());
                         break;
                     case "6":
-                        System.out.println("Ingrese el nuevo salario: ");
-                        listaMaestros.get(pos).setSalario(sc2.nextDouble());
+                        System.out.println("Ingrese el nuevo Dinero disponible: ");
+                        listaAlumnos.get(pos).setDineroDis(sc2.nextDouble());
+                        break;
+                    case "7":
+                        System.out.println("Ingrese la nueva edad: ");
+                        listaAlumnos.get(pos).setEdad(sc2.nextInt());
                         break;
                 } 
             
