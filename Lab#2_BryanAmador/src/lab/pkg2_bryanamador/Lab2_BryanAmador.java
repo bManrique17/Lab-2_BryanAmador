@@ -334,6 +334,7 @@ public class Lab2_BryanAmador {
                     System.out.println("Desea modificar algo mas [S/N]: ");
                     r = sc2.next().charAt(0);
                 } while (r == 'S' || r == 's');
+                break;
             case 2:
                 if(listaAlumnos.get(pos).clasesCursando.isEmpty())
                     System.out.println("No cursa ninguna clase");
@@ -346,9 +347,41 @@ public class Lab2_BryanAmador {
                     System.out.println("Ingrese el numero de clase a retirar: ");
                     int aRetirar = sc2.nextInt();
                     while(aRetirar<1 && aRetirar>listaAlumnos.get(pos).clasesCursando.size()){
-                        
+                        System.out.println("Valor invalido, ingreselo de nuevo: ");
+                        aRetirar = sc2.nextInt();
+                    }
+                    System.out.println("Ha retirado la clase "+listaAlumnos.get(pos).clasesCursando.get(aRetirar-1));
+                    listaAlumnos.get(pos).clasesCursando.remove(aRetirar-1);
+                }
+                break;
+            case 3:
+                if(listaClases.isEmpty())
+                    System.out.println("No puede adicionar clases");
+                else{
+                    System.out.println("\n***Adicionar clases\n");
+                    System.out.println("Las clases disponibles son: ");
+                    for (int i = 0; i < listaClases.size(); i++) {
+                        System.out.println("("+(i+1)+"): "+listaClases.get(i));
+                    }
+                    System.out.println("Ingrese la clase a adicionar: ");
+                    int aAdicionar = sc2.nextInt();
+                    while(aAdicionar<1 && aAdicionar>listaClases.size()){
+                        System.out.println("Valor invalido, ingreselo de nuevo: ");
+                        aAdicionar = sc2.nextInt();
+                    }
+                    if(listaClases.get(aAdicionar-1).cupoDisponible()){
+                        System.out.println("Ha adicionado la clase "+listaClases.get(aAdicionar-1));
+                        listaAlumnos.get(pos).clasesCursando.add(listaClases.get(aAdicionar-1).getNombre());
+                        listaClases.get(aAdicionar-1).listaAlumnos.add(listaAlumnos.get(pos).getNombre());
+                    }else{
+                        System.out.println("No hay cupo");
                     }
                 }
+                break;
+            case 4:
+                System.out.println("\n***Mensajeria\n");
+                System.out.println("No existe, perdon");
+                break;
                 
         }
         
