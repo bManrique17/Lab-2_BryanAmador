@@ -156,16 +156,27 @@ public class Lab2_BryanAmador {
                 if(listaClases.get(posClase-1).cupoDisponible()){
                     x.clasesCursando.add(listaClases.get(posClase-1).getSeccion());
                     listaClases.get(posClase-1).listaAlumnos.add(x.getNombre());    
+                    System.out.println("Ha matriculado "+listaClases.get(posClase-1).getNombre());
                 }else{
                     //crear una nueva clase por saturacion
                         Clase c = new Clase();
                         c.setNombre(listaClases.get(posClase-1).getNombre());
+                        c.setSeccion(listaClases.get(posClase-1).getSeccion()+"#2");
                         c.setCosto(listaClases.get(posClase-1).getCosto());
                         c.setMaxAlumnos(listaClases.get(posClase-1).getMaxAlumnos());
                         c.setUnidadesValorativas(listaClases.get(posClase-1).getUnidadesValorativas());
-                        System.out.println("");
+                        int i=0;
+                        for (i = 0; i < listaMaestros.size(); i++) {
+                            if(listaMaestros.get(i).maestroDisponible()){
+                                c.setMaestro(listaMaestros.get(i).getNombre());
+                            }
+                        }
+                        if(i==listaMaestros.size()){    
+                            System.out.println("no hay maestros disponibles");
+                        }
+                        
                 }
-                System.out.println("Ha matriculado "+listaClases.get(posClase-1).getNombre());
+                
                 System.out.println("\n Desea matricular otra clase [S/N]: ");
                 res = sc1.next().charAt(0);
             }while(res == 's' || res == 'S');
