@@ -329,11 +329,27 @@ public class Lab2_BryanAmador {
                         System.out.println("Ingrese la nueva edad: ");
                         listaAlumnos.get(pos).setEdad(sc2.nextInt());
                         break;
-                } 
-            
-                System.out.println("Desea modificar algo mas [S/N]: ");
-                r = sc2.next().charAt(0);
-            } while (r == 'S' || r == 's');
+                    } 
+
+                    System.out.println("Desea modificar algo mas [S/N]: ");
+                    r = sc2.next().charAt(0);
+                } while (r == 'S' || r == 's');
+            case 2:
+                if(listaAlumnos.get(pos).clasesCursando.isEmpty())
+                    System.out.println("No cursa ninguna clase");
+                else{
+                    System.out.println("\n***Retirar clases\n");
+                    System.out.println("Usted esta cursando las siguientes clases: ");
+                    for (int i = 0; i < listaAlumnos.get(pos).clasesCursando.size(); i++) {
+                        System.out.println("("+(i+1)+"): "+listaAlumnos.get(pos).clasesCursando.get(i));
+                    }
+                    System.out.println("Ingrese el numero de clase a retirar: ");
+                    int aRetirar = sc2.nextInt();
+                    while(aRetirar<1 && aRetirar>listaAlumnos.get(pos).clasesCursando.size()){
+                        
+                    }
+                }
+                
         }
         
     }
