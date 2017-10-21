@@ -15,8 +15,8 @@ public class Alumno {
     String nombre, numeroCuenta, carrera, usuario, contraseña;
     double dineroDis;
     int edad;
-    ArrayList<String> clasesCursando = new ArrayList();
-    ArrayList<String> buzon = new ArrayList();
+    public ArrayList<String> clasesCursando = new ArrayList();
+    public ArrayList<String> buzon = new ArrayList();
     
     public Alumno(){
     }

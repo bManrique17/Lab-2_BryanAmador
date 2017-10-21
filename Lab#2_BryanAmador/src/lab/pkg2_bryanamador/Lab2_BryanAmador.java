@@ -28,11 +28,11 @@ public class Lab2_BryanAmador {
                 System.out.println("Opcion invalida, de nuevo:");
                 opcion = sc.next().charAt(0);
             }
-            if(listaClases.isEmpty() && opcion == 2){
+            if(listaClases.isEmpty() && opcion == '2'){
                 System.out.println("No hay clases disponibles para matricularse");
                 opcion = 9;
             }
-            if(listaMaestros.isEmpty() && listaAlumnos.isEmpty() && opcion == 3){
+            if(listaMaestros.isEmpty() && listaAlumnos.isEmpty() && opcion == '3'){
                 System.out.println("No hay usuarios disponibles");
                 opcion = 9;
             }
@@ -55,12 +55,12 @@ public class Lab2_BryanAmador {
     }
     
     public static void Administracion(){
-        Scanner sc1 = new Scanner(System.in);
+        Scanner sc6 = new Scanner(System.in);
         System.out.println("\nADMINISTRACION");
         char resp,op;
         do {
             System.out.print("(1)Crear maestros\n(2)Crear clases\nIngrese su opcion: ");
-            op = sc1.next().charAt(0);
+            op = sc6.next().charAt(0);
             if(op == '2' && listaMaestros.isEmpty()){
                 System.out.println("No se pueden crear clases si no hay maestros");
                 op = 3;
@@ -70,21 +70,22 @@ public class Lab2_BryanAmador {
                 listaMaestros.add(x);
                 System.out.println("**Crear maestros");
                 System.out.print("Ingrese el nombre del maestro\n->");
-                x.setNombre(sc1.next());
+                x.setNombre(sc6.next());
                 System.out.print("Ingrese el titulo del maestro\n->");
-                x.setTitulo(sc1.next());
+                x.setTitulo(sc6.next());
                 System.out.print("Ingrese la maestria del maestro\n->");
-                x.setMaestria(sc1.next());
+                x.setMaestria(sc6.next());
                 System.out.print("Ingrese el usuario del maestro\n->");
-                x.setUsuario(sc1.next());
+                x.setUsuario(sc6.next());
                 System.out.print("Ingrese la contraseña del maestro\n->");
-                x.setContraseña(sc1.next());
+                x.setContraseña(sc6.next());
                 System.out.print("Ingrese el salario del maestro\n->");
-                x.setSalario(sc1.nextDouble());
+                x.setSalario(sc6.nextDouble());
                 System.out.print("Ingrese el maximo de clases que tendra asigandas el maestro\n->");
-                x.setSalario(sc1.nextDouble());
+                x.setSalario(sc6.nextDouble());
                 System.out.print("\nConfirmacion\n"+x);
             }else{ if(op == '2'){
+                Scanner sc1 = new Scanner(System.in);
                 Clase x = new Clase();
                 listaClases.add(x);
                 System.out.println("**Crear Clases");
@@ -112,7 +113,7 @@ public class Lab2_BryanAmador {
                 } 
             }
             System.out.print("\nDesea ejectucar otra opcion [S/N]: ");
-            resp = sc1.next().charAt(0);
+            resp = sc6.next().charAt(0);
         } while (resp == 's' || resp == 'S');
         
     }
@@ -262,7 +263,8 @@ public class Lab2_BryanAmador {
                         listaMaestros.get(pos).setSalario(sc2.nextDouble());
                         break;
                 } 
-            
+                System.out.println("Nuevos datos:\n");
+                System.out.println("->"+listaMaestros.get(pos));
                 System.out.println("Desea modificar algo mas [S/N]: ");
                 r = sc2.next().charAt(0);
             } while (r == 'S' || r == 's');
@@ -341,7 +343,8 @@ public class Lab2_BryanAmador {
                         listaAlumnos.get(pos).setEdad(sc2.nextInt());
                         break;
                     } 
-
+                    System.out.println("Nuevos datos:\n");
+                    System.out.println("->"+listaAlumnos.get(pos));
                     System.out.println("Desea modificar algo mas [S/N]: ");
                     r = sc2.next().charAt(0);
                 } while (r == 'S' || r == 's');

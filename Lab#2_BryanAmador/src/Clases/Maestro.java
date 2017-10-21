@@ -7,9 +7,16 @@ public class Maestro {
     String nombre, titulo, maestria, usuario, contraseña;
     double salario;
     int maxClases;
-    ArrayList<String> listaClases = new ArrayList();
+    public ArrayList<String> listaClases = new ArrayList();
     
     public Maestro(){
+    }
+    
+    public boolean maestroDisponible(){
+        if(listaClases.size()<maxClases)
+            return true;
+        else
+            return false;
     }
     
     //sets

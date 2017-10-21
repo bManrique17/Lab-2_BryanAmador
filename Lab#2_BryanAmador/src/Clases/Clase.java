@@ -6,10 +6,17 @@ public class Clase {
     String nombre, seccion, maestro;
     double costo;
     int maxAlumnos, unidadesValorativas;
-    ArrayList<String> listaAlumnos = new ArrayList();
+    public ArrayList<String> listaAlumnos = new ArrayList();
     
     
     public Clase(){
+    }
+    
+    public boolean cupoDisponible(){
+        if(listaAlumnos.size()<maxAlumnos)
+            return true;
+        else
+            return false;
     }
     
     //sets
